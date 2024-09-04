@@ -10,6 +10,7 @@ class MainController extends Controller
 {
 
     function index(){
+
         $data['scholarships'] = Scholarship::orderBy('created_at', 'desc')->get();
         return view('index',$data);
     }
