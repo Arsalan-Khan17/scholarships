@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div class="container pt-5">
+<div class="container py-5">
     <div class="row justify-content-center">
        <div class="col-8 mb-4">
            <div class="card">
@@ -58,7 +58,7 @@
        </div>
 
         <div class="col-12">
-            <div class="card">
+            <div class="card" style="overflow: auto">
                 <div class="card-body">
                     <table class="table table-bordered table-striped">
                         <thead>
