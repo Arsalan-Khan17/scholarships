@@ -11,6 +11,6 @@ class Scholarship extends Model
     protected $table = 'scholarships';
 
     protected $fillable = [
-      'name','country','added_by','link','deadline'
+      'name','country','added_by','link','deadline','category'
     ];
 }

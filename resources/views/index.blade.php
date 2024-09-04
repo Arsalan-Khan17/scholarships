@@ -18,11 +18,18 @@
                    <form action="{{route('save_scholarship')}}" method="post" class="form">
                        @csrf
                        <div class="row">
-                           <div class="col-sm-12 col-md-6 mb-3">
+                           <div class="col-sm-4 col-md-4 mb-3">
                                <label for="name" class="form-label">Name</label>
                                <input type="text" name="name" class="form-control" required>
                            </div>
-                           <div class="col-sm-12 col-md-6 mb-3">
+                           <div class="col-sm-12 col-md-4 mb-3">
+                               <label for="name" class="form-label">Type</label>
+                               <select name="category" id="" class="form-control" required>
+                                   <option value="Scholarship">Scholarship</option>
+                                   <option value="Admission">Admission</option>
+                               </select>
+                           </div>
+                           <div class="col-sm-4 col-md-4 mb-3">
                                <label for="name" class="form-label">Country</label>
                                <input type="text" name="country" class="form-control" required>
                            </div>
@@ -56,6 +63,7 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <th>Name</th>
+                            <th>Type</th>
                             <th>Country</th>
                             <th>Deadline</th>
                             <th>Link</th>
@@ -80,6 +88,7 @@
                                 @endphp
                                 <tr>
                                     <td>{{$scholarship->name}}</td>
+                                    <td>{{$scholarship->category ?? '-'}}</td>
                                     <td>{{$scholarship->country}}</td>
                                     <td>
                                        <span class="badge {{$bg_color}} p-2">{{isset($scholarship->deadline) ? \Carbon\Carbon::parse($scholarship->deadline)->format('j M Y') : '-'}}</span>
